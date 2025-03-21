@@ -51,3 +51,18 @@ def create_user_profile(sender, instance, created, **kwargs):
 
 def save_user_profile(sender, instance, **kwargs):
     instance.userprofile.save()
+
+class Book_Record(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    published_date = models.DateField()
+
+    class Meta:
+        permissions = [
+            ("can_add_book", "can add a new book"),
+            ("can_change_book", "Can change book details"),
+            ("can_delete_book", "Can delete a book"),
+        ]
+    
+    def __str__(self):
+        return self.title
