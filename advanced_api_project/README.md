@@ -39,3 +39,10 @@ Use `?ordering=` with any sortable field:
 - `?ordering=-publication_year`
 
 Prefix with `-` to sort in descending order.
+
+##  Running Tests
+
+To run unit tests for the API:
+
+```bash
+python manage.py test api
